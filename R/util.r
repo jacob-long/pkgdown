@@ -30,7 +30,7 @@ markdown <- function(path = NULL, ..., depth = 0L) {
   on.exit(unlink(tmp), add = TRUE)
 
   if (rmarkdown::pandoc_available("2.0")) {
-    from <- "markdown_github-hard_line_breaks+smart"
+    from <- "markdown-hard_line_breaks+smart"
   } else {
     from <- "markdown_github-hard_line_breaks"
   }
