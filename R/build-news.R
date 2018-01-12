@@ -115,7 +115,7 @@ data_news <- function(pkg = ".", depth = 1L) {
     depth = depth)
 
   sections <- xml2::read_html(html) %>%
-    xml2::xml_find_all("./body/div")
+    xml2::xml_find_all(".//section")
 
   titles <- sections %>%
     xml2::xml_find_first(".//h1|h2") %>%
@@ -147,7 +147,7 @@ data_news <- function(pkg = ".", depth = 1L) {
     anchor = anchors,
     html = html
   )
-  news[is_version, , drop = FALSE]
+  ## news[is_version, , drop = FALSE]
 }
 
 has_news <- function(path = ".") {
